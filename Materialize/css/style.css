@@ -1,0 +1,92 @@
+h1{
+	text-align:center;
+	font-style:italic;
+    font-size:3em;
+    text-shadow:1px 1px 1px black;
+    color: #368BC1;
+}
+
+h2{
+	text-align:center;
+	margin-top:auto;
+    font-size: 2em;
+    color: #368BC1;
+}
+
+
+
+button{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	margin:0;
+}
+
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button { 
+	-o-appearance: none;
+	margin:0
+}
+
+a{
+	text-decoration: none;
+	color: black;
+
+}
+
+#liquide{
+	display: block;
+}
+
+#type{
+	display: block;
+}
+
+#alim{
+	display: block;
+}
+
+.button{
+	text-align: center;
+}
+
+#centrage{
+	margin-left: 35%;
+}
+
+.collapsible-header i {
+    width: 1rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    display: block;
+    float: left;
+    text-align: center;
+    margin-right: .2rem;
+    margin-bottom: 2rem;
+}
+
+
+@media only screen and (min-width: 992px){
+
+html {
+    font-size:15px;
+}
+
+}
