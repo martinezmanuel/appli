@@ -56,26 +56,28 @@
               
             </div>
           </h2>
-<script type="text/javascript">
+
+  <script type="text/javascript">
         $(document).ready(function(){
           // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
           $('.modal-trigger').leanModal();
         });
 </script>
+
      	 	</div>
         
       		<div class="collapsible-body" id="centrage">
 
-      			<form>
+      			<form action="result.php" method="POST">
       <li>        
-     			 	<input name="application1" type="radio" id="eauclair" />
+     			 	<input name="application1" type="radio" id="eauclair"/>
 
       					<label for="eauclair">Eau claire</label>
 
     	</li>	
 					
     	<li>	
-    				<input name="application1" type="radio" id="eaupeucharge" /> 
+    				<input name="application1" type="radio" id="eaupeucharge"  /> 
 
     					<label for="eaupeucharge"> Eau peu chargée </label>
 
@@ -97,7 +99,7 @@
 
       <li>
 							
-					<input name="application1" type="radio" id="engrais" />   
+					<input name="application1" type="radio" id="engrais"  />   
 
 						<label for="engrais"> Engrais </label> 
       </li>
@@ -145,11 +147,11 @@
 
       			
 
-      				<FORM>
+      				<form action="result.php" method="POST">
 
 				  <li>
 
-    				 <input name="type_pompe" type="radio" id="surface" /> 
+    				 <input name="type_pompe" type="radio" id="surface"  /> 
 
     					<label for="surface" > Surface </label> 
 
@@ -158,7 +160,7 @@
 				  <li>
 				
 
-    				 <INPUT type="radio" name="type_pompe"  id="forage"/> 
+    				 <input type="radio" name="type_pompe"  id="forage" /> 
 
     					<label for="forage" > Forage </label> 
 
@@ -166,20 +168,20 @@
 
     			<li>
 
-    				 <INPUT type="radio" name="type_pompe"  id="immerge"/> 
+    				 <input type="radio" name="type_pompe"  id="immerge" /> 
 
     					<label for="immerge" > Immergée </label> 
 				  </li>
 
 				  <li>
 
-    				 <INPUT type="radio" name="type_pompe" id="moto"/> 
+    				 <input type="radio" name="type_pompe" id="moto" /> 
 
     					<label for="moto" > Motopompe </label> 
 
 				  </li>
 
-    				</FORM>
+    				</form>
 
     		
 
@@ -221,11 +223,11 @@
       		<div class="collapsible-body" id="centrage">
 
       			
-      				<FORM> 	
+      				<form action="result.php" method="POST"> 	
 
       			<li>
               
-    				<INPUT type="radio" name="alimentation" id="electmono" /> 
+    				<input type="radio" name="alimentation" id="electmono"  /> 
 
     					<label class="label-radio" for="electmono">	 Electrique monophasé </label> 
 
@@ -233,7 +235,7 @@
 
     			<li>
 
-    				<INPUT type="radio" name="alimentation" id="electripha"/> 
+    				<input type="radio" name="alimentation" id="electripha" /> 
 				
     					<label class="label-radio" for="electripha">	 Electrique triphasé </label> 
     				
@@ -241,7 +243,7 @@
 
 				<li>
 
-    				<INPUT type="radio" name="alimentation" id="cont12"/> 
+    				<input type="radio" name="alimentation" id="cont12" /> 
 
     					<label class="label-radio" for="cont12"> Continue 12V </label> 
 
@@ -249,7 +251,7 @@
 
     			<li>
 
-    				<INPUT type="radio" name="alimentation" id="cont24"/> 
+    				<input type="radio" name="alimentation" id="cont24" /> 
 
     				  	<label class="label-radio" for="cont24" > Continue 24V </label> 
 
@@ -257,7 +259,7 @@
 
 				<li>
     				
-    				<INPUT type="radio" name="alimentation" id="prisfor"/> 
+    				<input type="radio" name="alimentation" id="prisfor" /> 
 
     					<label class="label-radio" for="prisfor" > Prise de force </label> 
 
@@ -265,7 +267,7 @@
 
 				<li>
 
-    				<INPUT type="radio" name="alimentation" id="arbnu"/> 
+    				<input type="radio" name="alimentation" id="arbnu" /> 
 
     				  	<label class="label-radio" for="arbnu"> Arbre nu</label> 
 
@@ -273,14 +275,14 @@
 
 				<li>
 					
-    				<INPUT type="radio" name="alimentation" id="therm"/> 
+    				<input type="radio" name="alimentation" id="therm" /> 
 
 					 	<label class="label-radio" for="therm"> Thermique</label> 
 					
 				</li>
     				
 
-    				</FORM>
+    				</form>
 
       			
 
@@ -298,7 +300,7 @@
 
      		<div class="collapsible-body">
 
-     			
+     			<form action="result.php" method="POST">
           <p>
      				<input type='number' id='litres' /> 
 
@@ -321,6 +323,7 @@
                         	 });
 
             </script>
+          </form>
 
       		</div>
 
@@ -335,10 +338,11 @@
       		</div>
 
       		<div class="collapsible-body">
+            <form action="result.php" method="POST">
 
       		<p>
 
-      				<INPUT TYPE="number" NAME="Hta" id="hta" value="0" > 
+      				<input TYPE="number" NAME="Hta" id="hta" value="0" > 
 
 					Hauteur d'aspiration en m
           
@@ -346,11 +350,11 @@
 
 					<br> <p>
 
-					 <INPUT TYPE="number" NAME="Htr" id="htr" value="0"> 
+					 <input TYPE="number" NAME="Htr" id="htr" value="0"> 
 
 					 Hauteur de refoulement en m
 
-				
+				</form>
 
 			</div>
 
@@ -367,15 +371,15 @@
 
       			<p>
 
-      				<form >
+      			<form action="result.php" method="POST" >
 
-						<select class="browser-default">
+						  <select class="browser-default" id="centrage">
 
-						  	<option value="" disabled selected>
+						  	 <option value="" disabled selected>
 
 								Choisiser le diamètre intérieur de vos tuyaux
 
-							</option>
+							   </option>
 
 								<option value="20"  >20 <=> 3/4"  </option>
                 <option value="25"  >25 <=> 1"    </option>
@@ -388,9 +392,9 @@
 								<option value="125">125 <=> 5"    </option>
 								<option value="150">150 <=> 6"    </option>
 
-            </select> 
+              </select> 
 
-            		</form>
+            </form>
 
   			</div>
 
@@ -400,12 +404,14 @@
  
 		<div class="button"> 
 
-			
+      <form action="result.php" method="POST" >
+			 	
+        <button class="btn waves-effect waves-light" type="submit" name="resultat" >
+          <i class="material-icons right"></i>Résultat de votre result
+        </button>
 
-				
-  <button class="btn waves-effect waves-light" type="submit" name="resultat" action="recherche.php"method="POST">
-    <i class="material-icons right"></i>Résultat de votre recherche
-  </button>
+      
+      </form>
         
 
 			
@@ -413,6 +419,7 @@
 		</div>
 	
 </div>
+
 <script >
    $(document).ready(function(){
      $('.collapsible').collapsible({

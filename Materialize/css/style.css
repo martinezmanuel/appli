@@ -71,6 +71,12 @@ a{
 	margin-left: 35%;
 }
 
+.browser-default{
+	width: 30%;
+	margin-right: 45%;
+}
+
+
 .collapsible-header i {
     width: 1rem;
     font-size: 1.3rem;
@@ -80,6 +86,9 @@ a{
     text-align: center;
     margin-right: .2rem;
     margin-bottom: 2rem;
+}
+option{
+	text-align: center;
 }
 
 
