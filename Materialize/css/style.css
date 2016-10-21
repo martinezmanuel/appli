@@ -24,25 +24,9 @@ button{
 table{
 	margin-left: auto;
 	margin-right: auto;
-}
-
-/* Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-/* Chrome */
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button { 
-	-webkit-appearance: none;
-	margin:0;
-}
-
-/* Opéra*/
-input::-o-inner-spin-button,
-input::-o-outer-spin-button { 
-	-o-appearance: none;
-	margin:0
+	border-width:1px; 
+ 	border:1px solid black;
+ 	width:50%;
 }
 
 a{
@@ -70,6 +54,10 @@ a{
 #centrage{
 	margin-left: 35%;
 }
+#centrage2{
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .browser-default{
 	width: 30%;
@@ -90,6 +78,12 @@ a{
 option{
 	text-align: center;
 }
+
+td { 
+ 	border-width:1px;
+ 	border:1px solid black;
+ 	width:50%;
+ }
 
 
 @media only screen and (min-width: 992px){
