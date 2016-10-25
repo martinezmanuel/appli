@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<title>Document</title>
+	<title>Application</title>
 </head>
 <body>
 	
@@ -289,113 +289,14 @@
         </li>    
           
         <li>
-<!--
-          <div class="collapsible-header">
 
-            <h2>Débit de pompage</h2>
-              
-          </div>
-
-          <div class="collapsible-body">
-
-            <p>
-              <input name="debitmin" type="number" value="litres" id="litres" step="0.00000000000000001" /> 
-
-                <label for="litres">l/min </label> 
-
-            <br> <p>
-
-        
-              <input type="number" value="mc" id="mc" step="0.00000000000000001" /> 
-
-                  <label for="mc">m³/h </label> 
-
-            <script type="text/javascript">
-
-              $('#litres').on('keyup', function() {
-              $('#mc').val($(this).val() * 0.06);
-                });
-              $('#mc').on('keyup', function() {
-              $('#litres').val($(this).val() * 16.666666666667);
-                });
-
-            </script>
-
-          </div>
-
-        </li>
-
-        <li>
-
-          <div class="collapsible-header">
-
-            <h2>Hauteur d'aspiration et hauteur de refoulement</h2>
-
-          </div>
-
-          <div class="collapsible-body">
-
-            <p>
-
-              <input TYPE="number" NAME="Hta" id="hta" value="0" > 
-
-                Hauteur d'aspiration en m
-          
-            </p>
-
-            <br> <p>
-
-              <input TYPE="number" NAME="Htr" id="htr" value="0"> 
-
-                Hauteur de refoulement en m
-          </div>
-
-        </li>
-
-        <li>
-
-          <div class="collapsible-header">
-
-            <h2>Diamètre intérieur de vos tuyaux</h2>
-
-          </div>
-
-          <div class="collapsible-body">
-
-            <p>
-
-              <select class="browser-default" id="centrage">
-
-                 <option value="" disabled selected>
-
-                    Choisiser le diamètre intérieur de vos tuyaux
-
-                 </option>
-
-                  <option value="20"  >20 <=> 3/4"  </option>
-                  <option value="25"  >25 <=> 1"    </option>
-                  <option value="32"  >32 <=> 1"1/4 </option>
-                  <option value="40"  >40 <=> 1"1/2 </option>
-                  <option value="50"  >50 <=> 2"    </option>
-                  <option value="65"  >65 <=> 2"1/2 </option>
-                  <option value="80"  >80 <=> 3"    </option>
-                  <option value="100">100 <=> 4"    </option>
-                  <option value="125">125 <=> 5"    </option>
-                  <option value="150">150 <=> 6"    </option>
-
-              </select> 
-
-          </div>
-
-        </li>
--->
         </li>
 
       </ul>
 
       <div class="button"> 
 
-        <button class="btn waves-effect waves-light" type="submit" name="resultat" >
+        <button class="btn waves-effect waves-light light-blue" type="submit" name="resultat" >
 
           <i class="material-icons right"></i>Résultat de votre recherche
 

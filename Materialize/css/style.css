@@ -25,8 +25,9 @@ table{
 	margin-left: auto;
 	margin-right: auto;
 	border-width:1px; 
- 	border:1px solid black;
+ 	border:1px ;
  	width:50%;
+ 	border-color: #368BC1 solid;
 }
 
 a{
@@ -49,6 +50,9 @@ a{
 
 .button{
 	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 25px;
 }
 
 #centrage{
@@ -81,7 +85,7 @@ option{
 
 td { 
  	border-width:1px;
- 	border:1px solid black;
+ 	border:1px #368BC1 solid ;
  	width:50%;
  }
 

@@ -60,7 +60,9 @@
 				<td>application</td>
 				<td>lien</td>
 			</tr>
-	<?php while($row = mysqli_fetch_assoc($result)) { ?>
+	<?php if ($result = mysqli_query($bdd, $req)):
+	 	while($row = mysqli_fetch_assoc($result)) { ?>
+		
 			<tr>
 				<td> <?php echo $row['nom']; ?> </td>
 				<td> <?php echo $row['type_pompe']; ?> </td>
@@ -76,15 +78,19 @@
 				<td>
 				<?php if ($row['lien']== true): ?>
 				<a href=" <?php echo $row['lien']; ?>" > lien </a>  
-				<?php else : ?><a href=" contact.php" >nous contacter  </a> 
-				
-				<?php endif ; ?>
-				
+				<?php else : ?><a href=" contact.php" >nous contacter  </a> 				
+				<?php endif ; ?>				
 				</td>
-			
+				<?php  }; ?>		
 			</tr>	
-				<?php } ; ?>				
+	<?php else : ?> <input class="btn waves-effect waves-light light-blue" id="contact" type="button" onclick="location.href='contact.php';" value="contacter nous"/>
+	<?php endif ; ?>	
+								
 		</table>
+		<div class="button">
+			<input class="btn waves-effect waves-light light-blue" id="return" type="button" onclick="location.href='appli.php';" value="retour accueil" />
+			 
+		</div>	
 </div>		
 		
 	<script type="text/javascript" src="Materialize/js/materialize.min.js"></script>
