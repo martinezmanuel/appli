@@ -12,8 +12,14 @@ h2{
     font-size: 2em;
     color: #368BC1;
 }
+h3{
+	text-align:center;
+	margin-top:50px;
+    font-size: 1.5em;
+    color: #368BC1;
+}
 
-
+}
 
 button{
 	margin-right: auto;
@@ -21,20 +27,15 @@ button{
 }
 
 
-table{
-	margin-left: auto;
-	margin-right: auto;
-	border-width:1px; 
- 	border:1px ;
- 	width:50%;
- 	border-color: #368BC1 solid;
-}
-
 a{
 	text-decoration: none;
 	color: black;
-
 }
+
+option{
+	text-align: center;
+}
+
 
 #liquide{
 	display: block;
@@ -68,7 +69,6 @@ a{
 	margin-right: 45%;
 }
 
-
 .collapsible-header i {
     width: 1rem;
     font-size: 1.3rem;
@@ -79,21 +79,40 @@ a{
     margin-right: .2rem;
     margin-bottom: 2rem;
 }
-option{
+.ameliore{
 	text-align: center;
+	font-size: 1.2em;
+}
+table, td, th { 
+  border: 1px solid #368BC1;
+   border-collapse: collapse;
+   text-align: center;
+}
+ 
+ 
+th { border-bottom-width: 2px; }
+tr:nth-child(even){ background-color: #eee; }
+ 
+ 
+@media (max-width: 40em) {
+   table, tbody { display: block; }
+   tr {
+      display: table;
+      width: 100%;
+   }
+   th {
+      font-size: 0;
+      border: none;
+      visibility: hidden;
+   }
+   td, th { display: table-row; }
+   td:before {
+      content: attr(data-headers);
+      display: table-cell;
+      width: 60%;
+      border-right:  1px solid #368BC1;      
+   }
 }
 
-td { 
- 	border-width:1px;
- 	border:1px #368BC1 solid ;
- 	width:50%;
- }
 
 
-@media only screen and (min-width: 992px){
-
-html {
-    font-size:15px;
-}
-
-}

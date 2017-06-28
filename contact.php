@@ -39,11 +39,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
      
       // Variables concernant l'email
      
-      $destinataire = 'm-martinez@agram.fr'; // Adresse email du webmaster (à personnaliser)
+      $destinataire = 'm.martinez@agram.fr'; // Adresse email du webmaster (à personnaliser)
       $sujet = 'Titre du message'; // Titre de l'email
       $contenu = '<html><head><title>Titre du message</title></head><body>';
-      $contenu .= '<p>Bonjour, vous avez reçu un message à partir de votre site web.</p>';
-      $contenu .= '<p><strong>Nom</strong>: '.$name.'</p>';
+      $contenu .= '<p>Bonjour, vous avez reçu un message à partir de l application de recherche de pompe.</p>';
+      $contenu .= '<p><strong>Nom</strong>: '.$nom.'</p>';
       $contenu .= '<p><strong>Email</strong>: '.$email.'</p>';
       $contenu .= '<p><strong>Message</strong>: '.$message.'</p>';
       $contenu .= '</body></html>'; // Contenu du message de l'email (en XHTML)
@@ -77,7 +77,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8"/>
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <meta name="author" content="Martinez Manuel" />
   <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Css Materialize -->
@@ -102,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             <div class="row">
                <div class="input-field col s12">
                   	<i class="material-icons prefix">account_circle</i>
-                  	<input placeholder="Nom" name="name" id="inputname" type="text" class="form-control"value="<?php echo isset($_SESSION['inputs']['name'])? $_SESSION['inputs']['name'] : ''; ?>" required>
+                  	<input placeholder="Nom" name="name" id="inputname" pattern="([a-zA-Z\s]){1,30}" type="text" class="form-control"value="<?php echo isset($_SESSION['inputs']['name'])? $_SESSION['inputs']['name'] : ''; ?>" required>
                   	<label for="inputname"></label>
                </div>               
             </div>
@@ -131,11 +132,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
         </form>
 
-    <?php
-        unset($_SESSION['inputs']); 
-        unset($_SESSION['success']);
-        unset($_SESSION['errors']);
-    ?>
+   
  
 
         </div>

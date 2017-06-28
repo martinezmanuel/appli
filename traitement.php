@@ -1,32 +1,34 @@
 <?php
+error_reporting(E_ALL); 
+include 'recherche.php';
 
-	$bdd = mysqli_connect('localhost','root','root','AppliPompe');
+	$bdd = mysqli_connect($serveur,$admin,$mdp,$base);
 	
 	$typepompe = $_POST['type_pompe'];
 	$alimentation = $_POST['alimentation'];
 	$application = $_POST['application1'];
+	$pression = $_POST['pressionmax'];
+	$debit = $_POST['debitmax'];
+
 	$req = "SELECT *
 			FROM pompe
 			WHERE type_pompe = '$typepompe'
 			AND alimentation = '$alimentation'
-			AND application1 = '$application'";
+			AND application1 = '$application'
+			AND pressionMaxHauteurMin >= $pression
+			AND  dmin > $debit
+			ORDER BY pressionMaxHauteurMin 
+			";
 			
 
 	$result = mysqli_query($bdd, $req);
-	
-
-	
-    /*
-
-/*Libération des résultats*/
-	/*mysqli_free_result($result);
-
-/*Fermeture de la connexion*/
-	/*mysqli_close($bdd);*/?>
-	<!DOCTYPE html>
+	$rowcount=mysqli_num_rows($result);	
+	?>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Martinez Manuel" />
 	<!--Import Google Icon Font-->
 	 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   	<!--Css Materialize -->
@@ -45,52 +47,72 @@
 	<strong><h1> Résultat de votre recherche </h1></strong>
 	
 		<table class="centered">
-			
+		  <thead>	
 			<tr>
-				<td>nom</td>
-				<td> pompe</td>
-				<td>alimentation</td>
-				<td>debit mini en litre</td>
-				<td>debit maxi en litre</td>
-				<td>hta</td>
-				<td>htr</td>
-				<td>diametre</td>
-				<td>application</td>
-				<td>application</td>
-				<td>application</td>
-				<td>lien</td>
+				<th id="pmhm" ><b>pression maximum à hauteur minimale</b></th>
+				<th id="pmhma">pression minimum à hauteur maximale</th>
+				<th id="dmin">debit mini en l/min</th>
+				<th id="dmax">debit maxi en l/min</th>
+				<th id="den">diamêtre entrée</th>
+				<th id="dsor">diamêtre sortie</th>
+				<th id="app1">application</th>
+				<th id="app2">application</th>
+				<th id="app3">application</th>
+				<th id="lien">lien</th>
 			</tr>
-	<?php if ($result = mysqli_query($bdd, $req)):
-	 	while($row = mysqli_fetch_assoc($result)) { ?>
-		
+		  </thead>	
+
+	<?php if (isset($typepompe) && isset($alimentation) && isset($application)  && isset($debit)): ?>
+	<p class="ameliore"> Pour votre choix de pompe de type <i><?php echo $typepompe; ?></i> avec une alimentation de type<i> <?php echo $alimentation; ?></p>
+	 	<?php while($row = mysqli_fetch_assoc($result)) { 
+	 		?>
+	 	  <tbody>	
 			<tr>
-				<td> <?php echo $row['nom']; ?> </td>
-				<td> <?php echo $row['type_pompe']; ?> </td>
-				<td> <?php echo $row['alimentation']; ?> </td>
-				<td> <?php echo $row['dmin']; ?> </td>
-				<td> <?php echo $row['dmax']; ?> </td>
-				<td> <?php echo $row['hta']; ?> </td>
-				<td> <?php echo $row['htr']; ?> </td>
-				<td> <?php echo $row['diametre_tuyau']; ?> </td>
-				<td> <?php echo $row['application1']; ?> </td>
-				<td> <?php echo $row['application2']; ?> </td>
-				<td> <?php echo $row['application3']; ?> </td>
-				<td>
-				<?php if ($row['lien']== true): ?>
-				<a href=" <?php echo $row['lien']; ?>" > lien </a>  
-				<?php else : ?><a href=" contact.php" >nous contacter  </a> 				
-				<?php endif ; ?>				
+				<td headers="pmhm"><b> <?php echo $row['pressionMaxHauteurMin']; ?></b> </td>
+				<td headers="pmhma"> <?php echo $row['pressionMinHauteurMax']; ?> </td>
+				<td headers="dmin"> <?php echo $row['dmin']; ?> </td>
+				<td headers="dmax"> <?php echo $row['dmax']; ?> </td>
+				<td headers="den"> <?php echo $row['diametre_tuyau_entre']; ?> </td>
+				<td headers="dsor"> <?php echo $row['diametre_tuyau_sortie']; ?> </td>
+				<td headers="app1"> <?php echo $row['application1']; ?> </td>
+				<td headers="app2"> <?php echo $row['application2']; ?> </td>
+				<td headers="app3"> <?php echo $row['application3']; ?> </td>
+				<td headers="lien">
+					<?php if ($row['lien']== true): ?>
+					<a href=" <?php echo $row['lien']; ?>"target="_blank" style="color:#368BC1" > trouver votre pompe </a>  
+					<?php else  :?>
+					<a href="contact.php" >nous contacter </a> 				
+					<?php endif ; ?>				
 				</td>
-				<?php  }; ?>		
-			</tr>	
-	<?php else : ?> <input class="btn waves-effect waves-light light-blue" id="contact" type="button" onclick="location.href='contact.php';" value="contacter nous"/>
-	<?php endif ; ?>	
-								
+				<?php  }?>	
+			<?php endif ; ?>		
+			</tr>
+		  </tbody>						
 		</table>
 		<div class="button">
-			<input class="btn waves-effect waves-light light-blue" id="return" type="button" onclick="location.href='appli.php';" value="retour accueil" />
-			 
-		</div>	
+     <?php if ($rowcount == 0)
+			  {
+				 echo"<a href='contact.php' class='btn waves-effect waves-light light-blue'>Contactez-nous</a>";
+			  }
+			else {
+				echo"<a href='appli.php' class='btn waves-effect waves-light light-blue'>Retour accueil </a> ";
+			}
+	  ?>
+		</div> 
+		<!-- code js pour rendre le tableau responsif -->
+		<script type="text/javascript">
+		var tds = document.getElementsByTagName("td");
+    	for(var i=0; i<tds.length; i++){
+        var td = tds[i];
+        if(td.hasAttribute("headers")){
+            var th = document.getElementById(td.getAttribute("headers"));
+            if(th != null){
+                td.setAttribute("data-headers", th.textContent);
+            	}
+        	}        
+    	}
+		</script>   
+		
 </div>		
 		
 	<script type="text/javascript" src="Materialize/js/materialize.min.js"></script>

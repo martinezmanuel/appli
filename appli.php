@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="Martinez Manuel" />
   <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Css Materialize -->
@@ -10,13 +11,26 @@
 	<link type="text/css" rel="stylesheet" href="Materialize/css/style.css"/>
   <!-- lancement du jquery pour que les scripts passent -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="Materialize/js/materialize.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<title>Application</title>
 </head>
 <body>
 	
-
+    <script >
+    $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+    });
+    </script>
 
 
 <div class="container">
@@ -25,6 +39,7 @@
 	<strong>  <h1>Choisir sa pompe</h1> </strong>
 
   <form method="POST" action="traitement.php">
+
       
       <ul class="collapsible" data-collapsible="accordion">
 
@@ -34,17 +49,15 @@
 
             <h2>Type de liquide à pomper 
 
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
+              <button data-target="modal1" class="btn modal-trigger waves-light light-blue">?</button>
 
-                <i class="material-icons">?</i>
+              <!-- Ta modal -->
 
-              </a>
+              <div id="modal1" class="modal modal-fixed-footer">
 
-                <div id="modal1" class="modal">
+                <div class="modal-content">
 
-                  <div class="modal-content">
-
-                    <h3>Liquide à transferer</h3>
+                  <h3>Liquide à transferer</h3>
 
                       <p>Certaines pompes étant adaptées pour le relevage d’eaux chargées, d’autres destinées à pomper des eaux claires… Il est important de définir le type de liquide pompé afin de déterminer correctement sa pompe :
                       <p>- Eaux claires : particules en suspension quasiment inexistantes. Granulométrie maximale de 5 mm.</p>
@@ -54,25 +67,17 @@
                       <p>- Liquide alimentaire : Liquide destiné à l’alimentation animale</p>
                       </p>
 
-                  </div>
-
-                  <div class="modal-footer">
-
-                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
-
-                  </div>
-              
                 </div>
 
+                <div class="modal-footer">
+
+                  <a href="#!" class="modal-action modal-close waves-effect waves-light light-blue btn-flat ">Fermer</a>
+
+                </div>
+
+              </div>
+
               </h2>
-              
-    <script >
-   $(document).ready(function(){
-    $('.collapsible').collapsible({
-      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
-    });
-  </script>
 
           </div>
 
@@ -125,12 +130,13 @@
 
             <h2>Type de pompe  
 
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i class="material-icons">?</i></a>
+              <button data-target="modal2" class="btn modal-trigger waves-light light-blue">?</button>
 
-                <div id="modal2" class="modal">
+              <!-- Ta modal -->
 
-                  <div class="modal-content">
+              <div id="modal2" class="modal modal-fixed-footer">
 
+                <div class="modal-content">
                     <h3>Type de pompe</h3>
 
                       <p>. :
@@ -144,7 +150,7 @@
 
                   <div class="modal-footer">
 
-                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-light light-blue btn-flat">Fermer</a>
 
                   </div>
               
@@ -197,11 +203,11 @@
 
           <div class="collapsible-header">
             <h2>Type d'alimentation
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal3"><i class="material-icons">?</i></a>
+              <button data-target="modal3" class="btn modal-trigger waves-light light-blue">?</button>
+              <!-- Ta modal -->
+              <div id="modal3" class="modal modal-fixed-footer">
 
-                <div id="modal3" class="modal">
-
-                  <div class="modal-content">
+                <div class="modal-content">
 
                     <h3>Type d'alimentation</h3>
 
@@ -218,7 +224,9 @@
 
                 <div class="modal-footer">
 
-                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-light light-blue btn-flat">Fermer</a>
+                </div> 
+                </div> 
             </h2>
           </div>
 
@@ -244,17 +252,9 @@
 
               <li>
 
-                <input type="radio" value="continue 12v" name="alimentation" id="cont12" /> 
+                <input type="radio" value="continue " name="alimentation" id="cont" /> 
 
-                  <label class="label-radio" for="cont12"> Continue 12V </label> 
-
-              </li>
-
-              <li>
-
-                <input type="radio" value="électrique continue 24v" name="alimentation" id="cont24" /> 
-
-                  <label class="label-radio" for="cont24" > Continue 24V </label> 
+                  <label class="label-radio" for="cont"> Continue </label> 
 
               </li>
 
@@ -285,14 +285,50 @@
           
 
           </div>
+        </li> 
+        <li> 
+          <div class="collapsible-header">
+            <h2>Pression en Bar
+              
+            </h2>
+          </div>
 
-        </li>    
+          <div class="collapsible-body" id="centrage">
+
+            <ul>  
+
+              <li>
+                  <input type="number" min="0" max="65" step="0.1" name="pressionmax" id="pressionMaxHauteurMin" required>
+              </li>
+
+            </ul>
           
-        <li>
 
+          </div>
         </li>
+        <li> 
+          <div class="collapsible-header">
+            <h2>Débit en L/min
+              
+            </h2>
+          </div>
+
+          <div class="collapsible-body" id="centrage">
+
+            <ul>  
+
+              <li>
+                  <input type="number" min="0" max="3700" step="1" name="debitmax" id="dmax" required>
+              </li>
+
+            </ul>
+          
+
+          </div>
+        </li>        
 
       </ul>
+  
 
       <div class="button"> 
 
@@ -304,9 +340,41 @@
 
   </form>  
 
+   
+
 </div>
 
-<script type="text/javascript" src="Materialize/js/materialize.min.js"></script>
+<div class="container">
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <h3> Convertisseur l/min en M3/h </h3>
+      </div>
+      <div class="collapsible-body" id="centrage">
+        <ul>
+          <li>
+            <label>l/min :</label>
+            <input type='number'min="0" id='litres' value='litres' />
+            <br />
+            <label>m³/h :</label>
+            <input type='number' min="0" id='mc' value='mc' />
+
+            <script type="text/javascript">
+            $('#litres').on('keyup', function() {
+            $('#mc').val($(this).val() * .06);
+            })
+
+            $('#mc').on('keyup', function() {
+            $('#litres').val($(this).val() * 16.666666666667);
+            })
+          </script>
+          </li>
+        </ul>
+      </div>    
+    </li>
+  </ul>
+</div>
+
 
 </body>
 
