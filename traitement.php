@@ -95,7 +95,7 @@ include 'recherche.php';
 				 echo"<a href='contact.php' class='btn waves-effect waves-light light-blue'>Contactez-nous</a>";
 			  }
 			else {
-				echo"<a href='appli.php' class='btn waves-effect waves-light light-blue'>Retour accueil </a> ";
+				echo"<a href='index.php' class='btn waves-effect waves-light light-blue'>Retour accueil </a> ";
 			}
 	  ?>
 		</div> 

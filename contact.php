@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
                   <div class="button">
                       <button class="btn waves-effect waves-light light-blue" type="submit">envoyer<i class="material-icons right">send</i></button>
-                      <input class="btn waves-effect waves-light light-blue" id="return" type="button" onclick="location.href='appli.php';" value="retour accueil" />
+                      <input class="btn waves-effect waves-light light-blue" id="return" type="button" onclick="location.href='index.php';" value="retour accueil" />
 
                   </div>
 
