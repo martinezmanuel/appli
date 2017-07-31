@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Css Materialize -->
-	<link type="text/css" rel="stylesheet" href="Materialize/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="Materialize/css/materialize.min.css"  media="screen"/>
   <!-- Css perso -->
 	<link type="text/css" rel="stylesheet" href="Materialize/css/style.css"/>
   <!-- lancement du jquery pour que les scripts passent -->
@@ -96,14 +96,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 <body>
 	<div class="container">
 
-		<strong><h1>Formulaire de contact</h1></strong>
+		<h1>Formulaire de contact</h1>
 
 		<div class="row" id="centrage2">
          <form class="col s12" action="contact.php" method="post">
             <div class="row">
                <div class="input-field col s12">
                   	<i class="material-icons prefix">account_circle</i>
-                  	<input placeholder="Nom" name="name" id="inputname" pattern="([a-zA-Z\s]){1,30}" type="text" class="form-control"value="<?php echo isset($_SESSION['inputs']['name'])? $_SESSION['inputs']['name'] : ''; ?>" required>
+                  	<input placeholder="Nom" name="name" id="inputname" pattern="([a-zA-Z\s]){1,30}" type="text" class="form-control" value="<?php echo isset($_SESSION['inputs']['name'])? $_SESSION['inputs']['name'] : ''; ?>" required>
                   	<label for="inputname"></label>
                </div>               
             </div>
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             <div class="row" >
                <div class="input-field col s12">
                		<i class="material-icons prefix">message</i>
-                  	<input placeholder="Votre demande" name="message" id="inputmessage" type="text"value="<?php echo isset($_SESSION['inputs']['message'])? $_SESSION['inputs']['message'] : ''; ?>" required >
+                  	<input placeholder="Votre demande" name="message" id="inputmessage" type="text" value="<?php echo isset($_SESSION['inputs']['message'])? $_SESSION['inputs']['message'] : ''; ?>" required >
                   	<label for="inputmessage"></label>
                </div>
             </div>

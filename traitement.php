@@ -32,7 +32,7 @@ include 'recherche.php';
 	<!--Import Google Icon Font-->
 	 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   	<!--Css Materialize -->
-	<link type="text/css" rel="stylesheet" href="Materialize/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="Materialize/css/materialize.min.css"  media="screen"/>
 	<!-- Css perso -->
 	<link type="text/css" rel="stylesheet" href="Materialize/css/style.css"/>
 	<!-- lancement du jquery pour que les scripts passent -->
@@ -44,7 +44,7 @@ include 'recherche.php';
 <body>
 <div class="container">
 
-	<strong><h1> Résultat de votre recherche </h1></strong>
+	<h1> Résultat de votre recherche </h1>
 	
 		<table class="centered">
 		  <thead>	

@@ -6,7 +6,7 @@
   <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Css Materialize -->
-	<link type="text/css" rel="stylesheet" href="Materialize/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="Materialize/css/materialize.min.css"  media="screen"/>
   <!-- Css perso -->
 	<link type="text/css" rel="stylesheet" href="Materialize/css/style.css"/>
   <!-- lancement du jquery pour que les scripts passent -->
@@ -36,8 +36,7 @@
 <div class="container">
 
 
-	<strong>  <h1>Choisir sa pompe</h1> </strong>
-
+	<h1>Choisir sa pompe</h1> 
   <form method="POST" action="traitement.php">
 
       
@@ -65,7 +64,7 @@
                       <p>- Eau chargées : eaux chargées en particules. Granulométrie supérieure à 10 mm.</p>
                       <p>- Engrais : liquide corrosif destiné à la pulvérisation d’insecticides, de fertilisants…</p>
                       <p>- Liquide alimentaire : Liquide destiné à l’alimentation animale</p>
-                      </p>
+                      
 
                 </div>
 
@@ -143,7 +142,7 @@
                       <p>- Forage : Récolte l'eau directement via les voies souterraines ou dans une nappe phréatique . La profondeur peut atteindre les 120 m pour des forages de 119 mm de diamètre intérieur minimum  </p>
                       <p>- Immergée : Préconisé pour la captation de liquide à plus de 7 mètres de la surface  </p>
                       <p>- Motopompe : C'est une pompe de surface munis de son propre moteur à combustion . Elle est idéale pour transferer des fluides et apporte une parfaite autonomie aux utilisateurs dans les zones déppourvues d'électricité ou éloignées de toute alimentation électrique </p>
-                      </p>
+                      
 
                   </div>
 
@@ -217,7 +216,7 @@
                       <p>- Prise de force : Entrainement grâce à une prise de force tracteur</p>
                       <p>- Arbre nu :Pompe auto amorçante avec palier et arbre nu </p>
                       <p>- Thermique : Entrainement grâce à une énergie pétrolière</p>
-                      </p>
+                      
 
                   </div>
 
